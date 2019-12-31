@@ -1,0 +1,48 @@
+<!--<!DOCTYPE html>-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title></title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+   
+  </body>
+</html>
+<style>
+
+</style>
+ <script>
+    	//禁止字体跟随微信浏览器字体调整而调整
+      (function() {
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+          handleFontSize();
+        } else {
+          if (document.addEventListener) {
+            document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+          } else if (document.attachEvent) {
+            document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+            document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
+          }
+        }
+
+        function handleFontSize() {
+          // 设置网页字体为默认大小
+          WeixinJSBridge.invoke('setFontSizeCallback', {
+            'fontSize': 0
+          });
+          // 重写设置网页字体大小的事件
+          WeixinJSBridge.on('menu:setfont', function() {
+            WeixinJSBridge.invoke('setFontSizeCallback', {
+              'fontSize': 0
+            });
+          });
+        }
+      })();
+    </script>

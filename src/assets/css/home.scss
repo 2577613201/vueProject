@@ -1,0 +1,26 @@
+#home{
+    position: relative;
+    width: 750px;
+    margin: 0 auto;
+   .logo{
+       width: 750px;
+       height: auto;
+       img{
+            width: 100%;
+            height: auto;
+       }
+   }
+   .title{
+       width: 354px;
+       height: 94px;
+       background: url('../image/title.png') no-repeat;
+       background-size: 100% 100%;
+       text-align: center;
+       line-height: 94px;
+       font-size: 34px;
+       color: #fff;
+       position: absolute;
+       left: 50%;
+       transform: translateX(-50%);
+   }
+}
